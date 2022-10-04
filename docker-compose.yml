@@ -1,9 +1,9 @@
 version: '3.7'
 services:
   postgres-PrFm:
-    image: postgres:latest
+    image: postgres
     ports:
-      - ${POSTGRES_PORT:-5432}:5432
+      - '5432:5432'
     volumes:
       - ./data:/var/lib/mysql
     environment:
