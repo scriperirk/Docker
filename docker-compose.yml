@@ -1,13 +1,13 @@
 version: '3.7'
 services:
-  mysql:
-    image: ciceromaurina/12-alpine:latest
+  postgres-PrFm:
+    image: postgres:latest
     ports:
-      - '3306:3306'
+      - ${POSTGRES_PORT:-5432}:5432
     volumes:
       - ./data:/var/lib/mysql
     environment:
-      - MYSQL_RANDOM_ROOT_PASSWORD=yes
-      - MYSQL_DATABASE=Postgres
-      - MYSQL_USER=scriper
-      - MYSQL_PASSWORD=123
+      - POSTGRES_RANDOM_ROOT_PASSWORD=yes
+      - POSTGRES_DATABASE=Postgre
+      - POSTGRES_USER=scriper
+      - POSTGRES_PASSWORD=123
